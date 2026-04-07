@@ -37,13 +37,13 @@ const VachanaSection: React.FC = () => {
   const bgY = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
   return (
-    <section ref={containerRef} className="py-60 bg-gray-950 text-white relative overflow-hidden">
+    <section ref={containerRef} className="pt-32 pb-60 bg-gray-950 text-white relative overflow-hidden">
       {/* Background Cinematic Parallax Text Layer */}
       <motion.div 
         style={{ y: bgY }}
         className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none z-0"
       >
-        <h2 className="text-[35vw] font-black uppercase leading-none tracking-tighter -rotate-12">DHARMA</h2>
+        <h2 className="text-[25vw] font-black uppercase leading-none tracking-tighter -rotate-12">KRISHNA</h2>
       </motion.div>
 
       <div className="container mx-auto px-8 relative z-10">

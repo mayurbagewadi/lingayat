@@ -32,7 +32,7 @@ const features = [
 
 const Features: React.FC = () => {
   return (
-    <section className="py-40 bg-white dark:bg-gray-950 transition-colors duration-700 relative overflow-hidden" id="about">
+    <section className="pt-40 pb-20 bg-white dark:bg-gray-950 transition-colors duration-700 relative overflow-hidden" id="about">
       {/* Background Sacred Geometric Patterns */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]">
         <svg width="100%" height="100%" className="text-primary-900">
