@@ -1,0 +1,101 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - complementary [ref=e6]:
+    - generic [ref=e7]:
+      - img [ref=e9]
+      - generic [ref=e11]: LingayatSangam
+    - navigation [ref=e12]:
+      - button "Dashboard" [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+        - generic [ref=e19]: Dashboard
+      - button "All Users" [ref=e20] [cursor=pointer]:
+        - img [ref=e21]
+        - generic [ref=e26]: All Users
+      - button "Approvals 16" [ref=e27] [cursor=pointer]:
+        - img [ref=e28]
+        - generic [ref=e31]: Approvals
+        - generic [ref=e32]: "16"
+      - button "Payments" [ref=e33] [cursor=pointer]:
+        - img [ref=e34]
+        - generic [ref=e37]: Payments
+      - button "Announcements" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+        - generic [ref=e42]: Announcements
+      - button "System Health" [active] [ref=e43] [cursor=pointer]:
+        - img [ref=e44]
+        - generic [ref=e46]: System Health
+      - button "Reports" [ref=e47] [cursor=pointer]:
+        - img [ref=e48]
+        - generic [ref=e50]: Reports
+      - button "Logs" [ref=e51] [cursor=pointer]:
+        - img [ref=e52]
+        - generic [ref=e56]: Logs
+      - button "Settings" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+        - generic [ref=e61]: Settings
+    - button "Exit Panel" [ref=e63] [cursor=pointer]:
+      - img [ref=e64]
+      - generic [ref=e66]: Exit Panel
+  - main [ref=e67]:
+    - generic [ref=e68]:
+      - heading "System Health" [level=2] [ref=e70]
+      - button [ref=e71] [cursor=pointer]:
+        - img [ref=e72]
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - heading "Database Connectivity Diagnostic" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Verify RLS and Table Access
+        - generic [ref=e84]:
+          - button "Deep Seed" [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+            - text: Deep Seed
+          - button "Run Tests" [ref=e92] [cursor=pointer]:
+            - img [ref=e93]
+            - text: Run Tests
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: profiles
+            - img [ref=e99]
+          - heading "profiles" [level=4] [ref=e102]
+          - paragraph [ref=e103]: Accessible (17 records)
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: payments
+            - img [ref=e107]
+          - heading "payments" [level=4] [ref=e110]
+          - paragraph [ref=e111]: Accessible (0 records)
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - generic [ref=e114]: announcements
+            - img [ref=e115]
+          - heading "announcements" [level=4] [ref=e118]
+          - paragraph [ref=e119]: Accessible (null records)
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: audit_logs
+            - img [ref=e123]
+          - heading "audit_logs" [level=4] [ref=e126]
+          - paragraph [ref=e127]: Accessible (0 records)
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: activity_logs
+            - img [ref=e131]
+          - heading "activity_logs" [level=4] [ref=e134]
+          - paragraph [ref=e135]: Accessible (null records)
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: interests
+            - img [ref=e139]
+          - heading "interests" [level=4] [ref=e142]
+          - paragraph [ref=e143]: Accessible (0 records)
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - generic [ref=e146]: app_settings
+            - img [ref=e147]
+          - heading "app_settings" [level=4] [ref=e150]
+          - paragraph [ref=e151]: Accessible (null records)
+```

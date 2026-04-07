@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "jsx": "react-jsx",
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+
+    /* Strict Type-Checking Options - ALL ENABLED */
+    "strict": true,                           /* Enable all strict type-checking options */
+    "noImplicitAny": true,                    /* Error on expressions with an implied 'any' type */
+    "strictNullChecks": true,                 /* Strict null and undefined checking */
+    "strictFunctionTypes": true,              /* Strict checking of function types */
+    "strictBindCallApply": true,              /* Strict 'bind', 'call', and 'apply' methods */
+    "strictPropertyInitialization": true,    /* Strict checking of class properties */
+    "noImplicitThis": true,                   /* Error on 'this' with an implied 'any' type */
+    "alwaysStrict": true,                     /* Use 'use strict' in all files */
+    "noUnusedLocals": true,                   /* Error on unused local variables */
+    "noUnusedParameters": true,               /* Error on unused function parameters */
+    "noImplicitReturns": true,                /* Error when function doesn't return a value */
+    "noFallthroughCasesInSwitch": true,       /* Error on fallthrough cases in switch statements */
+    "forceConsistentCasingInFileNames": true, /* Enforce consistent file name casing */
+
+    /* Module Resolution */
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "allowJs": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+
+    /* Emit */
+    "noEmit": true,
+    "sourceMap": false,                       /* Disable source maps in production */
+
+    /* Interop Constraints */
+    "esModuleInterop": true,                  /* Emit helper code for ES module interoperability */
+    "isolatedModules": true,                  /* Ensure each file can be safely transpiled */
+    "skipLibCheck": true                      /* Skip type checking of declaration files */
+  }
+}

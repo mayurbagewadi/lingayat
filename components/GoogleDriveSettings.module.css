@@ -1,0 +1,211 @@
+.container {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 16px;
+}
+
+.loadingState p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.statusCard {
+  background: #f0fdf4;
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.statusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.statusHeader h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #10b981;
+  margin: 0 0 4px 0;
+}
+
+.statusHeader p {
+  font-size: 14px;
+  color: #059669;
+  margin: 0;
+}
+
+.lastVerified {
+  font-size: 12px;
+  color: #6b7280;
+  text-align: right;
+}
+
+.disconnectedCard {
+  background: #fef2f2;
+  border: 2px solid #ef4444;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.disconnectedCard h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ef4444;
+  margin: 0 0 4px 0;
+}
+
+.disconnectedCard p {
+  font-size: 14px;
+  color: #991b1b;
+  margin: 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.infoCard {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.infoCard h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.storageBar {
+  background: #e5e7eb;
+  border-radius: 4px;
+  height: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.storageUsed {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.infoCard p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.folderList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.folder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.folder span {
+  color: #6b7280;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.folder code {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #374151;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.actions button {
+  min-width: 160px;
+}
+
+.helpText {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.helpText h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.helpText ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.helpText li {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.helpText li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .statusHeader {
+    flex-direction: column;
+  }
+
+  .lastVerified {
+    text-align: left;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

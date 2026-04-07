@@ -1,0 +1,17 @@
+# Supabase Configuration
+# Project: Lingayat Mali Matrimonial Platform
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+max_rows = 1000
+
+[db]
+major_version = 15
+
+[realtime]
+enabled = true
+
+[analytics]
+enabled = true

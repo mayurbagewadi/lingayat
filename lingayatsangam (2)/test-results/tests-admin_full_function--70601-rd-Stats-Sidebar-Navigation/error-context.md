@@ -1,0 +1,71 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - complementary [ref=e6]:
+    - generic [ref=e7]:
+      - img [ref=e9]
+      - generic [ref=e11]: LingayatSangam
+    - navigation [ref=e12]:
+      - button "Dashboard" [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+        - generic [ref=e19]: Dashboard
+      - button "All Users" [ref=e20] [cursor=pointer]:
+        - img [ref=e21]
+        - generic [ref=e26]: All Users
+      - button "Approvals 16" [ref=e27] [cursor=pointer]:
+        - img [ref=e28]
+        - generic [ref=e31]: Approvals
+        - generic [ref=e32]: "16"
+      - button "Payments" [ref=e33] [cursor=pointer]:
+        - img [ref=e34]
+        - generic [ref=e37]: Payments
+      - button "Announcements" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+        - generic [ref=e42]: Announcements
+      - button "System Health" [ref=e43] [cursor=pointer]:
+        - img [ref=e44]
+        - generic [ref=e46]: System Health
+      - button "Reports" [ref=e47] [cursor=pointer]:
+        - img [ref=e48]
+        - generic [ref=e50]: Reports
+      - button "Logs" [ref=e51] [cursor=pointer]:
+        - img [ref=e52]
+        - generic [ref=e56]: Logs
+      - button "Settings" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+        - generic [ref=e61]: Settings
+    - button "Exit Panel" [ref=e63] [cursor=pointer]:
+      - img [ref=e64]
+      - generic [ref=e66]: Exit Panel
+  - main [ref=e67]:
+    - generic [ref=e68]:
+      - heading "Dashboard" [level=2] [ref=e70]
+      - button [ref=e71] [cursor=pointer]:
+        - img [ref=e72]
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - img [ref=e83]
+        - paragraph [ref=e88]: Total Profiles
+        - generic [ref=e89]:
+          - heading "17" [level=4] [ref=e90]
+          - generic [ref=e91]: +12%
+      - generic [ref=e92]:
+        - img [ref=e95]
+        - paragraph [ref=e99]: Active Members
+        - generic [ref=e100]:
+          - heading "1" [level=4] [ref=e101]
+          - generic [ref=e102]: +18%
+      - generic [ref=e103]:
+        - img [ref=e106]
+        - paragraph [ref=e109]: Pending Approvals
+        - generic [ref=e110]:
+          - heading "16" [level=4] [ref=e111]
+          - generic [ref=e112]: "-5%"
+      - generic [ref=e113]:
+        - img [ref=e116]
+        - paragraph [ref=e119]: New Payments
+        - generic [ref=e120]:
+          - heading "0" [level=4] [ref=e121]
+          - generic [ref=e122]: +2%
+```

@@ -1,0 +1,186 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - complementary [ref=e6]:
+    - generic [ref=e7]:
+      - img [ref=e9]
+      - generic [ref=e11]: LingayatSangam
+    - navigation [ref=e12]:
+      - button "Dashboard" [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+        - generic [ref=e19]: Dashboard
+      - button "All Users" [ref=e20] [cursor=pointer]:
+        - img [ref=e21]
+        - generic [ref=e26]: All Users
+      - button "Approvals 16" [ref=e27] [cursor=pointer]:
+        - img [ref=e28]
+        - generic [ref=e31]: Approvals
+        - generic [ref=e32]: "16"
+      - button "Payments" [ref=e33] [cursor=pointer]:
+        - img [ref=e34]
+        - generic [ref=e37]: Payments
+      - button "Announcements" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+        - generic [ref=e42]: Announcements
+      - button "System Health" [ref=e43] [cursor=pointer]:
+        - img [ref=e44]
+        - generic [ref=e46]: System Health
+      - button "Reports" [ref=e47] [cursor=pointer]:
+        - img [ref=e48]
+        - generic [ref=e50]: Reports
+      - button "Logs" [ref=e51] [cursor=pointer]:
+        - img [ref=e52]
+        - generic [ref=e56]: Logs
+      - button "Settings" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+        - generic [ref=e61]: Settings
+    - button "Exit Panel" [ref=e63] [cursor=pointer]:
+      - img [ref=e64]
+      - generic [ref=e66]: Exit Panel
+  - main [ref=e67]:
+    - generic [ref=e68]:
+      - heading "Approvals" [level=2] [ref=e70]
+      - button [ref=e71] [cursor=pointer]:
+        - img [ref=e72]
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - button "All Pending" [ref=e81] [cursor=pointer]:
+          - img [ref=e82]
+          - text: All Pending
+        - button "Profiles" [ref=e85] [cursor=pointer]:
+          - img [ref=e86]
+          - text: Profiles
+        - button "PDFs" [ref=e89] [cursor=pointer]:
+          - img [ref=e90]
+          - text: PDFs
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - img [ref=e97]
+            - generic [ref=e98]:
+              - heading "Pending User" [level=4] [ref=e99]
+              - paragraph [ref=e100]: Panchamasali
+          - button "Review Identity" [active] [ref=e101] [cursor=pointer]
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - img [ref=e105]
+            - generic [ref=e106]:
+              - heading "Pending User" [level=4] [ref=e107]
+              - paragraph [ref=e108]: Panchamasali
+          - button "Review Identity" [ref=e109] [cursor=pointer]
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - img [ref=e113]
+            - generic [ref=e114]:
+              - heading "Pending User" [level=4] [ref=e115]
+              - paragraph [ref=e116]: Panchamasali
+          - button "Review Identity" [ref=e117] [cursor=pointer]
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - img [ref=e121]
+            - generic [ref=e122]:
+              - heading "User Demo Name" [level=4] [ref=e123]
+              - paragraph [ref=e124]: Panchamasali
+          - button "Review Identity" [ref=e125] [cursor=pointer]
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - img [ref=e129]
+            - generic [ref=e130]:
+              - heading "Pending User" [level=4] [ref=e131]
+              - paragraph [ref=e132]: Panchamasali
+          - button "Review Identity" [ref=e133] [cursor=pointer]
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - img [ref=e137]
+            - generic [ref=e138]:
+              - heading "Pending User" [level=4] [ref=e139]
+              - paragraph [ref=e140]: Panchamasali
+          - button "Review Identity" [ref=e141] [cursor=pointer]
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - img [ref=e145]
+            - generic [ref=e146]:
+              - heading "User Demo Name" [level=4] [ref=e147]
+              - paragraph [ref=e148]: Panchamasali
+          - button "Review Identity" [ref=e149] [cursor=pointer]
+        - generic [ref=e150]:
+          - generic [ref=e151]:
+            - img [ref=e153]
+            - generic [ref=e154]:
+              - heading "Pending User" [level=4] [ref=e155]
+              - paragraph [ref=e156]: Panchamasali
+          - button "Review Identity" [ref=e157] [cursor=pointer]
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - img [ref=e161]
+            - generic [ref=e162]:
+              - heading "Pending User" [level=4] [ref=e163]
+              - paragraph [ref=e164]: Panchamasali
+          - button "Review Identity" [ref=e165] [cursor=pointer]
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - img [ref=e169]
+            - generic [ref=e170]:
+              - heading "Pending User" [level=4] [ref=e171]
+              - paragraph [ref=e172]: Panchamasali
+          - button "Review Identity" [ref=e173] [cursor=pointer]
+        - generic [ref=e174]:
+          - generic [ref=e175]:
+            - img [ref=e177]
+            - generic [ref=e178]:
+              - heading "Pending User" [level=4] [ref=e179]
+              - paragraph [ref=e180]: Panchamasali
+          - button "Review Identity" [ref=e181] [cursor=pointer]
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - img [ref=e185]
+            - generic [ref=e186]:
+              - heading "Pending User" [level=4] [ref=e187]
+              - paragraph [ref=e188]: Panchamasali
+          - button "Review Identity" [ref=e189] [cursor=pointer]
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - img [ref=e193]
+            - generic [ref=e194]:
+              - heading "Pending User" [level=4] [ref=e195]
+              - paragraph [ref=e196]: Panchamasali
+          - button "Review Identity" [ref=e197] [cursor=pointer]
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - img [ref=e201]
+            - generic [ref=e202]:
+              - heading "User Demo Name" [level=4] [ref=e203]
+              - paragraph [ref=e204]: Panchamasali
+          - button "Review Identity" [ref=e205] [cursor=pointer]
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - img [ref=e209]
+            - generic [ref=e210]:
+              - heading "Akshata Patil" [level=4] [ref=e211]
+              - paragraph [ref=e212]: Panchamasali
+          - button "Review Identity" [ref=e213] [cursor=pointer]
+        - generic [ref=e214]:
+          - generic [ref=e215]:
+            - img [ref=e217]
+            - generic [ref=e218]:
+              - heading "Basavraj Hiremath" [level=4] [ref=e219]
+              - paragraph [ref=e220]: Jangama
+          - button "Review Identity" [ref=e221] [cursor=pointer]
+  - generic [ref=e224]:
+    - generic [ref=e225]:
+      - heading "Moderation Panel" [level=3] [ref=e226]
+      - button [ref=e227] [cursor=pointer]:
+        - img [ref=e228]
+    - generic [ref=e231]:
+      - img [ref=e233]
+      - generic [ref=e234]:
+        - paragraph [ref=e235]: Pending User
+        - paragraph [ref=e236]: BCA • Mysore
+    - generic [ref=e237]:
+      - text: Admin Notes / Rejection Reason
+      - textbox "Provide feedback if rejecting..." [ref=e238]
+    - generic [ref=e239]:
+      - button "Approve Profile" [ref=e240] [cursor=pointer]
+      - button "Reject" [ref=e241] [cursor=pointer]
+```

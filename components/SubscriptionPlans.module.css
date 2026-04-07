@@ -1,0 +1,159 @@
+.container {
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.planCard {
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.planCard:hover {
+  border-color: #2563eb;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+  transform: translateY(-4px);
+}
+
+.planHeader {
+  margin-bottom: 20px;
+}
+
+.planHeader h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.duration {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.features {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.features h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.features li:last-child {
+  margin-bottom: 0;
+}
+
+.checkmark {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 16px;
+}
+
+.loadingContainer p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-size: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px dashed #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,196 @@
+# Nginx Configuration for Lingayat Sangam
+#
+# This is an example Nginx configuration for self-hosted deployments.
+# Replace 'yourdomain.com' with your actual domain.
+#
+# Installation:
+# 1. Copy to /etc/nginx/sites-available/lingayat-sangam
+# 2. Enable: ln -s /etc/nginx/sites-available/lingayat-sangam /etc/nginx/sites-enabled/
+# 3. Test: nginx -t
+# 4. Restart: systemctl restart nginx
+#
+# SSL Setup:
+# Use Let's Encrypt for free SSL certificates:
+#   sudo apt-get install certbot python3-certbot-nginx
+#   sudo certbot certonly --nginx -d yourdomain.com -d www.yourdomain.com
+#   Certificates: /etc/letsencrypt/live/yourdomain.com/
+
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name yourdomain.com www.yourdomain.com;
+
+    # Allow Let's Encrypt challenge
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    # Redirect all other HTTP traffic to HTTPS
+    location / {
+        return 301 https://$server_name$request_uri;
+    }
+}
+
+# HTTPS server
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name yourdomain.com www.yourdomain.com;
+
+    # ========== SSL/TLS Configuration ==========
+
+    # SSL Certificates (obtained from Let's Encrypt)
+    ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+
+    # SSL Protocols (TLS 1.2 and 1.3 only, modern and secure)
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Cipher Configuration (strong ciphers only)
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # Session Configuration
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+    ssl_session_tickets off;
+
+    # SSL Stapling (OCSP stapling for faster TLS)
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 8.8.4.4 valid=300s;
+    resolver_timeout 5s;
+
+    # ========== Security Headers ==========
+
+    # Force HTTPS (HSTS - HTTP Strict Transport Security)
+    # max-age: 1 year (31536000 seconds)
+    # includeSubDomains: Apply to all subdomains
+    # preload: Allow inclusion in browser preload lists
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+
+    # Prevent MIME type sniffing
+    add_header X-Content-Type-Options "nosniff" always;
+
+    # Prevent clickjacking (disallow framing)
+    add_header X-Frame-Options "DENY" always;
+
+    # Legacy XSS protection (modern browsers use CSP instead)
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # Referrer Policy (control what referrer info is sent)
+    # strict-origin-when-cross-origin: Send full URL only for same-origin, origin-only for cross-origin
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    # Content Security Policy (XSS prevention)
+    # default-src 'self': Only same-origin by default
+    # script-src: Allow scripts from self and safe CDNs
+    # style-src: Allow styles from self and inline (needed for React)
+    # img-src: Allow images from anywhere (for external profile images)
+    # connect-src: API endpoints (Supabase, Sentry)
+    # frame-ancestors: Prevent embedding in iframes
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://sentry.io; frame-ancestors 'none';" always;
+
+    # Permissions Policy (restrict browser features)
+    # geolocation, microphone, camera: Disabled
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+
+    # ========== Application Configuration ==========
+
+    # Root directory where React build files are located
+    # Adjust path based on your deployment
+    root /var/www/lingayat-sangam/dist;
+
+    # Default file for directory requests
+    index index.html;
+
+    # ========== Caching Strategy ==========
+
+    # Cache static assets indefinitely (versioned by hash)
+    # Extensions: js, css, png, jpg, jpeg, gif, ico, svg, woff, woff2, ttf, eot
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    # Don't cache HTML files (they reference versioned JS/CSS)
+    location ~ \.html$ {
+        expires -1;
+        add_header Cache-Control "no-cache, no-store, must-revalidate" always;
+    }
+
+    # ========== Single Page Application Routing ==========
+
+    # All requests that don't match a file go to index.html
+    # This enables client-side routing in React
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # ========== Security: Hide Sensitive Files ==========
+
+    # Hide hidden files (starting with .)
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # Hide backup files (ending with ~)
+    location ~ ~$ {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # Hide common config files
+    location ~ /\.(gitignore|htaccess|htpasswd)$ {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # ========== Logging ==========
+
+    # Access log
+    access_log /var/log/nginx/lingayat-sangam-access.log;
+
+    # Error log
+    error_log /var/log/nginx/lingayat-sangam-error.log warn;
+
+    # ========== Compression ==========
+
+    # gzip compression for text-based files
+    gzip on;
+    gzip_types text/plain text/css text/xml text/javascript
+               application/x-javascript application/xml+rss
+               application/atom+xml image/svg+xml
+               application/javascript application/json;
+    gzip_min_length 1024;
+    gzip_comp_level 6;
+
+    # ========== Additional Performance ==========
+
+    # Disable Nginx version in headers
+    server_tokens off;
+
+    # Keep connections alive
+    keepalive_timeout 65;
+
+    # Client body size limit (for file uploads, if any)
+    client_max_body_size 10M;
+}
+
+# Redirect www to non-www (optional)
+# Uncomment if you prefer non-www URLs
+# server {
+#     listen 443 ssl http2;
+#     listen [::]:443 ssl http2;
+#     server_name www.yourdomain.com;
+#
+#     ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+#     ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+#
+#     return 301 https://yourdomain.com$request_uri;
+# }

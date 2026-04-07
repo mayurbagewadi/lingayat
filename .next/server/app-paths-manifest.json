@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/browse/page": "app/browse/page.js",
+  "/auth/signup/page": "app/auth/signup/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/notifications/page": "app/notifications/page.js",
+  "/page": "app/page.js",
+  "/profile/[id]/page": "app/profile/[id]/page.js",
+  "/profile/edit/page": "app/profile/edit/page.js",
+  "/profile/setup/page": "app/profile/setup/page.js",
+  "/subscription/checkout/page": "app/subscription/checkout/page.js",
+  "/subscription/success/page": "app/subscription/success/page.js",
+  "/subscription/plans/page": "app/subscription/plans/page.js"
+}
