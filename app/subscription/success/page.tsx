@@ -1,15 +1,14 @@
 'use client';
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 
-export default function SuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const paymentId = searchParams.get('payment');
 
   useEffect(() => {
-    // Redirect after 5 seconds
     const timer = setTimeout(() => {
       router.push('/dashboard');
     }, 5000);
@@ -39,5 +38,13 @@ export default function SuccessPage() {
         </button>
       </div>
     </main>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div className="container" style={{ textAlign: 'center', padding: '40px' }}><div className="spinner"></div></div>}>
+      <SuccessContent />
+    </Suspense>
   );
 }

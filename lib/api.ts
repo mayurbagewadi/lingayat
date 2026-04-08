@@ -41,7 +41,7 @@ export async function uploadPhoto(
   formData.append('file', file);
   formData.append('photo_number', photoNumber.toString());
 
-  const response = await fetch(`${API_URL}/api/photo/upload`, {
+  const response = await fetch(`/api/photo/upload`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,

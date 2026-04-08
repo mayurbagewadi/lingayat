@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import imageCompression from 'browser-image-compression';
 import { uploadPhoto } from '@/lib/api';
 import styles from './PhotoUpload.module.css';
 
@@ -58,7 +59,13 @@ export default function PhotoUpload({
     setSuccess(false);
 
     try {
-      const file = fileInputRef.current.files[0];
+      const raw = fileInputRef.current.files[0];
+      const file = await imageCompression(raw, {
+        maxSizeMB: 0.3,
+        maxWidthOrHeight: 800,
+        useWebWorker: true,
+        fileType: 'image/jpeg',
+      });
       await uploadPhoto(file, photoNumber, token);
 
       setSuccess(true);

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import PaymentHandler from '@/components/PaymentHandler';
 
@@ -18,7 +18,7 @@ interface OrderData {
   currency: string;
 }
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const planId = searchParams.get('plan');
@@ -47,7 +47,6 @@ export default function CheckoutPage() {
     }
 
     try {
-      // Fetch plan details
       const planResponse = await fetch(`/api/subscription/plans`);
       if (!planResponse.ok) throw new Error('Failed to fetch plans');
 
@@ -57,7 +56,6 @@ export default function CheckoutPage() {
 
       setPlan(selectedPlan);
 
-      // Fetch user details
       const userResponse = await fetch('/api/user/profile', {
         headers: { 'Authorization': `Bearer ${authToken}` },
       });
@@ -66,7 +64,6 @@ export default function CheckoutPage() {
       const userData = await userResponse.json();
       setUser(userData.data);
 
-      // Create order
       const orderResponse = await fetch('/api/subscription/create-order', {
         method: 'POST',
         headers: {
@@ -151,5 +148,13 @@ export default function CheckoutPage() {
         </div>
       )}
     </main>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div className="container" style={{ textAlign: 'center', padding: '40px' }}><div className="spinner"></div></div>}>
+      <CheckoutContent />
+    </Suspense>
   );
 }

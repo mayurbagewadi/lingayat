@@ -150,7 +150,7 @@ export default function EditProfilePage() {
             <input
               type="text"
               name="height"
-              placeholder="e.g., 5'8\""
+              placeholder="e.g., 5ft 8in"
               value={formData.height || ''}
               onChange={handleChange}
             />
